@@ -1,0 +1,657 @@
+/*=========================================================
+=            CONFIGURACIÓN GENERAL                        =
+=========================================================*/
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    font-family:Arial, Helvetica, sans-serif;
+
+    background:#f4f7fb;
+
+    color:#222;
+
+    line-height:1.6;
+
+    padding:30px;
+
+}
+
+
+/*=========================================================
+=            ENCABEZADO                                  =
+=========================================================*/
+
+.encabezado-principal{
+
+    background:linear-gradient(135deg,#0b4f8a,#1f7a8c);
+
+    color:white;
+
+    text-align:center;
+
+    padding:35px;
+
+    border-radius:15px;
+
+    margin-bottom:30px;
+
+    box-shadow:0px 6px 20px rgba(0,0,0,.20);
+
+}
+
+.encabezado-principal h1{
+
+    font-size:30px;
+
+    margin-bottom:8px;
+
+}
+
+.encabezado-principal h2{
+
+    font-size:22px;
+
+    margin-bottom:8px;
+
+}
+
+.encabezado-principal h3{
+
+    font-size:18px;
+
+    font-weight:normal;
+
+    margin-bottom:10px;
+
+}
+
+.encabezado-principal p{
+
+    font-size:17px;
+
+}
+
+
+/*=========================================================
+=            TARJETAS SUPERIORES                         =
+=========================================================*/
+
+.dashboard-resumen{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+    gap:20px;
+
+    margin-bottom:35px;
+
+}
+
+.card-resumen{
+
+    background:white;
+
+    border-left:7px solid #2E8B57;
+
+    border-radius:12px;
+
+    padding:22px;
+
+    text-align:center;
+
+    box-shadow:0 4px 12px rgba(0,0,0,.10);
+
+    transition:.30s;
+
+}
+
+.card-resumen:hover{
+
+    transform:translateY(-5px);
+
+}
+
+.titulo-card{
+
+    display:block;
+
+    color:#666;
+
+    font-size:15px;
+
+    margin-bottom:12px;
+
+}
+
+.valor-card{
+
+    font-size:34px;
+
+    font-weight:bold;
+
+    color:#0b4f8a;
+
+}
+
+
+/*=========================================================
+=            CONTENEDOR GENERAL                          =
+=========================================================*/
+
+.container{
+
+    max-width:1400px;
+
+    margin:auto;
+
+}
+/*=========================================================
+=            FORMULARIO                                  =
+=========================================================*/
+
+.form-section{
+
+    background:white;
+
+    padding:35px;
+
+    border-radius:15px;
+
+    box-shadow:0px 5px 18px rgba(0,0,0,.10);
+
+    margin-bottom:40px;
+
+}
+
+
+.section-box{
+
+    border-left:8px solid #1f7a8c;
+
+    background:#fafafa;
+
+    padding:25px;
+
+    margin-bottom:30px;
+
+    border-radius:12px;
+
+}
+
+
+.section-box h4{
+
+    color:#0b4f8a;
+
+    font-size:22px;
+
+    margin-bottom:25px;
+
+    border-bottom:2px solid #d9e5f2;
+
+    padding-bottom:12px;
+
+}
+
+
+/*=========================================================
+=            PREGUNTAS                                   =
+=========================================================*/
+
+.form-group{
+
+    margin-bottom:28px;
+
+}
+
+
+.form-group label{
+
+    display:block;
+
+    margin-bottom:12px;
+
+    font-size:16px;
+
+}
+
+
+.form-group strong{
+
+    color:#222;
+
+    font-size:16px;
+
+}
+
+
+/*=========================================================
+=            INPUT NUMÉRICO                              =
+=========================================================*/
+
+input[type="number"]{
+
+    width:180px;
+
+    padding:10px;
+
+    border:1px solid #bbb;
+
+    border-radius:8px;
+
+    font-size:16px;
+
+    transition:.30s;
+
+}
+
+
+input[type="number"]:focus{
+
+    outline:none;
+
+    border-color:#1f7a8c;
+
+    box-shadow:0 0 6px rgba(31,122,140,.35);
+
+}
+
+
+/*=========================================================
+=            OPCIONES                                    =
+=========================================================*/
+
+.radio-group{
+
+    display:flex;
+
+    gap:35px;
+
+    margin-top:10px;
+
+}
+
+
+.radio-group-vertical{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:12px;
+
+    margin-top:12px;
+
+}
+
+
+.radio-group label,
+
+.radio-group-vertical label{
+
+    cursor:pointer;
+
+    font-size:15px;
+
+}
+
+
+input[type="radio"]{
+
+    margin-right:8px;
+
+    transform:scale(1.15);
+
+}
+
+
+/*=========================================================
+=            ESCALA LIKERT                               =
+=========================================================*/
+
+.likert-instruccion{
+
+    background:#eef7f9;
+
+    border-left:5px solid #1f7a8c;
+
+    padding:18px;
+
+    border-radius:8px;
+
+    margin-bottom:25px;
+
+    font-size:15px;
+
+}
+
+
+.likert-row{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:30px;
+
+    flex-wrap:wrap;
+
+    margin-top:18px;
+
+    padding:15px;
+
+    background:#f8f9fb;
+
+    border-radius:10px;
+
+}
+
+
+.likert-row label{
+
+    text-align:center;
+
+    min-width:45px;
+
+}
+
+
+/*=========================================================
+=            BOTÓN                                       =
+=========================================================*/
+
+.btn-submit{
+
+    width:100%;
+
+    margin-top:30px;
+
+    padding:18px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:#2E8B57;
+
+    color:white;
+
+    font-size:18px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.30s;
+
+}
+
+
+.btn-submit:hover{
+
+    background:#1f6b43;
+
+    transform:translateY(-2px);
+
+    box-shadow:0 6px 15px rgba(0,0,0,.15);
+
+}
+/*=========================================================
+=            DASHBOARD ESTADÍSTICO                        =
+=========================================================*/
+
+.charts-section{
+
+    margin-top:50px;
+
+}
+
+
+.titulo-dashboard{
+
+    text-align:center;
+
+    color:#0b4f8a;
+
+    font-size:34px;
+
+    margin-bottom:40px;
+
+    font-weight:bold;
+
+}
+
+
+/*=========================================================
+=            BLOQUES DEL REPORTE                         =
+=========================================================*/
+
+.report-block{
+
+    background:white;
+
+    border-radius:15px;
+
+    padding:30px;
+
+    margin-bottom:45px;
+
+    box-shadow:0px 6px 20px rgba(0,0,0,.10);
+
+    transition:.30s;
+
+}
+
+.report-block:hover{
+
+    transform:translateY(-3px);
+
+}
+
+
+.oficial-title{
+
+    color:#0b4f8a;
+
+    text-align:center;
+
+    font-size:22px;
+
+    line-height:1.6;
+
+    margin-bottom:25px;
+
+    border-bottom:3px solid #2E8B57;
+
+    padding-bottom:15px;
+
+}
+
+
+/*=========================================================
+=            TABLAS                                      =
+=========================================================*/
+
+.data-table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+    margin-bottom:30px;
+
+    font-size:15px;
+
+}
+
+
+.data-table thead{
+
+    background:#0b4f8a;
+
+    color:white;
+
+}
+
+
+.data-table th{
+
+    padding:14px;
+
+    border:1px solid #ddd;
+
+}
+
+
+.data-table td{
+
+    padding:12px;
+
+    border:1px solid #ddd;
+
+    text-align:center;
+
+}
+
+
+.data-table tbody tr:nth-child(even){
+
+    background:#f7f9fb;
+
+}
+
+
+.data-table tbody tr:hover{
+
+    background:#e9f6ff;
+
+}
+
+
+/*=========================================================
+=            GRÁFICOS                                    =
+=========================================================*/
+
+.canvas-wrap-linear{
+
+    width:100%;
+
+    max-width:720px;
+
+    margin:30px auto;
+
+}
+
+
+.canvas-wrap-circular{
+
+    width:420px;
+
+    margin:30px auto;
+
+}
+
+
+canvas{
+
+    width:100% !important;
+
+    height:auto !important;
+
+}
+
+
+/*=========================================================
+=            EFECTOS                                     =
+=========================================================*/
+
+.report-block canvas{
+
+    transition:.35s;
+
+}
+
+
+.report-block:hover canvas{
+
+    transform:scale(1.02);
+
+}
+
+
+/*=========================================================
+=            RESPONSIVE                                  =
+=========================================================*/
+
+@media(max-width:900px){
+
+    body{
+
+        padding:15px;
+
+    }
+
+    .encabezado-principal h1{
+
+        font-size:22px;
+
+    }
+
+    .encabezado-principal h2{
+
+        font-size:18px;
+
+    }
+
+    .encabezado-principal h3{
+
+        font-size:16px;
+
+    }
+
+    .titulo-dashboard{
+
+        font-size:26px;
+
+    }
+
+    .canvas-wrap-circular{
+
+        width:300px;
+
+    }
+
+    .canvas-wrap-linear{
+
+        max-width:100%;
+
+    }
+
+    .radio-group{
+
+        flex-direction:column;
+
+        gap:12px;
+
+    }
+
+    .likert-row{
+
+        gap:15px;
+
+    }
+
+    .data-table{
+
+        font-size:13px;
+
+    }
+
+}

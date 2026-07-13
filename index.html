@@ -1,0 +1,1410 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Sistema de Investigación de Mercados - Turismo de Aventura Sostenible
+    </title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+
+<header class="encabezado-principal">
+
+    <h1>
+
+        UNIVERSIDAD NACIONAL "SANTIAGO ANTÚNEZ DE MAYOLO"
+
+    </h1>
+
+    <h2>
+
+        INFORME ESTADÍSTICO DE INVESTIGACIÓN DE MERCADOS
+
+    </h2>
+
+    <h3>
+
+        Agencias de Turismo de Aventura del distrito de Huaraz
+
+    </h3>
+
+    <p>
+
+        Dashboard Estadístico en Tiempo Real
+
+    </p>
+
+</header>
+
+
+<div class="dashboard-resumen">
+
+    <div class="card-resumen">
+
+        <span class="titulo-card">
+
+            Total de Encuestas
+
+        </span>
+
+        <span
+            id="totalEncuestas"
+            class="valor-card">
+
+            0
+
+        </span>
+
+    </div>
+
+    <div class="card-resumen">
+
+        <span class="titulo-card">
+
+            Turistas Nacionales
+
+        </span>
+
+        <span
+            id="totalNacionales"
+            class="valor-card">
+
+            0
+
+        </span>
+
+    </div>
+
+    <div class="card-resumen">
+
+        <span class="titulo-card">
+
+            Turistas Extranjeros
+
+        </span>
+
+        <span
+            id="totalExtranjeros"
+            class="valor-card">
+
+            0
+
+        </span>
+
+    </div>
+
+    <div class="card-resumen">
+
+        <span class="titulo-card">
+
+            Edad Promedio
+
+        </span>
+
+        <span
+            id="edadPromedio"
+            class="valor-card">
+
+            0
+
+        </span>
+
+    </div>
+
+</div>
+
+
+<div class="container">
+
+<section class="form-section">
+
+<form id="surveyForm">
+    <div class="section-box">
+
+    <h4>
+
+        SECCIÓN I. FILTRO Y PERFIL DEMOGRÁFICO DEL ENCUESTADO
+
+    </h4>
+
+    <div class="form-group">
+
+        <label>
+
+            <strong>
+            1. ¿El motivo principal de su visita a Huaraz incluye realizar actividades de turismo de aventura?
+            </strong>
+
+        </label>
+
+        <div class="radio-group">
+
+            <label>
+
+                <input
+                    type="radio"
+                    name="p1"
+                    value="Sí"
+                    required>
+
+                Sí
+
+            </label>
+
+            <label>
+
+                <input
+                    type="radio"
+                    name="p1"
+                    value="No">
+
+                No
+
+            </label>
+
+        </div>
+
+    </div>
+
+
+
+    <div class="form-group">
+
+        <label>
+
+            <strong>
+
+            2. ¿Cuál es su edad?
+
+            </strong>
+
+        </label>
+
+        <input
+            type="number"
+            id="p2"
+            min="15"
+            max="99"
+            required>
+
+    </div>
+
+
+
+    <div class="form-group">
+
+        <label>
+
+            <strong>
+
+            3. Género
+
+            </strong>
+
+        </label>
+
+        <div class="radio-group-vertical">
+
+            <label>
+
+                <input
+                    type="radio"
+                    name="p3"
+                    value="Femenino"
+                    required>
+
+                Femenino
+
+            </label>
+
+            <label>
+
+                <input
+                    type="radio"
+                    name="p3"
+                    value="Masculino">
+
+                Masculino
+
+            </label>
+
+            <label>
+
+                <input
+                    type="radio"
+                    name="p3"
+                    value="Otro">
+
+                Otro
+
+            </label>
+
+        </div>
+
+    </div>
+
+
+
+    <div class="form-group">
+
+        <label>
+
+            <strong>
+
+            4. ¿Cuál es su nacionalidad?
+
+            </strong>
+
+        </label>
+
+        <div class="radio-group-vertical">
+
+            <label>
+
+                <input
+                    type="radio"
+                    name="p4"
+                    value="Peruano (Nacional)"
+                    required>
+
+                Peruano (Nacional)
+
+            </label>
+
+            <label>
+
+                <input
+                    type="radio"
+                    name="p4"
+                    value="Extranjero">
+
+                Extranjero
+
+            </label>
+
+        </div>
+
+    </div>
+
+</div>
+<div class="section-box">
+
+    <h4>
+
+        SECCIÓN II. VARIABLES DE COMPORTAMIENTO DEL CONSUMIDOR
+
+    </h4>
+
+
+    <div class="form-group">
+
+        <label>
+
+            <strong>
+
+            5. ¿Qué factor considera MÁS importante al elegir una agencia de turismo de aventura?
+
+            </strong>
+
+        </label>
+
+        <div class="radio-group-vertical">
+
+            <label>
+
+                <input
+                    type="radio"
+                    name="p5"
+                    value="El precio más económico."
+                    required>
+
+                El precio más económico.
+
+            </label>
+
+            <label>
+
+                <input
+                    type="radio"
+                    name="p5"
+                    value="La seguridad y calidad de los equipos.">
+
+                La seguridad y calidad de los equipos.
+
+            </label>
+
+            <label>
+
+                <input
+                    type="radio"
+                    name="p5"
+                    value="Las prácticas eco-sostenibles y cuidado ambiental.">
+
+                Las prácticas eco-sostenibles y cuidado ambiental.
+
+            </label>
+
+            <label>
+
+                <input
+                    type="radio"
+                    name="p5"
+                    value="Las recomendaciones de terceros o prestigio de la agencia.">
+
+                Las recomendaciones de terceros o prestigio de la agencia.
+
+            </label>
+
+        </div>
+
+    </div>
+
+
+
+    <div class="form-group">
+
+        <label>
+
+            <strong>
+
+            6. ¿A través de qué medio suele informarse sobre la reputación ambiental de una agencia de turismo de aventura?
+
+            </strong>
+
+        </label>
+
+        <div class="radio-group-vertical">
+
+            <label>
+
+                <input
+                    type="radio"
+                    name="p6"
+                    value="Redes sociales (Instagram, TikTok, Facebook)."
+                    required>
+
+                Redes sociales (Instagram, TikTok, Facebook).
+
+            </label>
+
+            <label>
+
+                <input
+                    type="radio"
+                    name="p6"
+                    value="Plataformas de reseñas (TripAdvisor, Google Reviews).">
+
+                Plataformas de reseñas (TripAdvisor, Google Reviews).
+
+            </label>
+
+            <label>
+
+                <input
+                    type="radio"
+                    name="p6"
+                    value="Recomendación boca a boca (amigos, familiares).">
+
+                Recomendación boca a boca (amigos, familiares).
+
+            </label>
+
+            <label>
+
+                <input
+                    type="radio"
+                    name="p6"
+                    value="No busco este tipo de información.">
+
+                No busco este tipo de información.
+
+            </label>
+
+        </div>
+
+    </div>
+
+</div>
+<div class="section-box">
+
+    <h4>
+
+        SECCIÓN III. MATRIZ DE CONCEPCIÓN AMBIENTAL (ESCALA DE LIKERT)
+
+    </h4>
+
+    <p class="likert-instruccion">
+
+        <strong>
+            Instrucciones:
+        </strong>
+
+        Marque una sola alternativa según su nivel de acuerdo.
+
+        <br><br>
+
+        <strong>
+            (1) Totalmente en desacuerdo &nbsp;&nbsp;
+            (2) En desacuerdo &nbsp;&nbsp;
+            (3) Indiferente &nbsp;&nbsp;
+            (4) De acuerdo &nbsp;&nbsp;
+            (5) Totalmente de acuerdo
+        </strong>
+
+    </p>
+
+    <!-- Pregunta 7 -->
+
+    <div class="form-group">
+
+        <label>
+
+            <strong>
+
+                7. La política de "Cero Residuos" aplicada por la agencia durante las actividades en montaña influye en mi decisión de contratación.
+
+            </strong>
+
+        </label>
+
+        <div class="likert-row">
+
+            <label><input type="radio" name="p7" value="1" required>1</label>
+
+            <label><input type="radio" name="p7" value="2">2</label>
+
+            <label><input type="radio" name="p7" value="3">3</label>
+
+            <label><input type="radio" name="p7" value="4">4</label>
+
+            <label><input type="radio" name="p7" value="5">5</label>
+
+        </div>
+
+    </div>
+
+
+    <!-- Pregunta 8 -->
+
+    <div class="form-group">
+
+        <label>
+
+            <strong>
+
+                8. Considero importante que la agencia garantice un pago justo y condiciones laborales éticas para guías y arrieros.
+
+            </strong>
+
+        </label>
+
+        <div class="likert-row">
+
+            <label><input type="radio" name="p8" value="1" required>1</label>
+
+            <label><input type="radio" name="p8" value="2">2</label>
+
+            <label><input type="radio" name="p8" value="3">3</label>
+
+            <label><input type="radio" name="p8" value="4">4</label>
+
+            <label><input type="radio" name="p8" value="5">5</label>
+
+        </div>
+
+    </div>
+
+
+    <!-- Pregunta 9 -->
+
+    <div class="form-group">
+
+        <label>
+
+            <strong>
+
+                9. La existencia de certificaciones ecológicas oficiales aumenta mi confianza en una agencia de turismo de aventura.
+
+            </strong>
+
+        </label>
+
+        <div class="likert-row">
+
+            <label><input type="radio" name="p9" value="1" required>1</label>
+
+            <label><input type="radio" name="p9" value="2">2</label>
+
+            <label><input type="radio" name="p9" value="3">3</label>
+
+            <label><input type="radio" name="p9" value="4">4</label>
+
+            <label><input type="radio" name="p9" value="5">5</label>
+
+        </div>
+
+    </div>
+
+
+    <!-- Pregunta 10 -->
+
+    <div class="form-group">
+
+        <label>
+
+            <strong>
+
+                10. Valoro positivamente que la agencia utilice equipos de montaña biodegradables o ambientalmente responsables.
+
+            </strong>
+
+        </label>
+
+        <div class="likert-row">
+
+            <label><input type="radio" name="p10" value="1" required>1</label>
+
+            <label><input type="radio" name="p10" value="2">2</label>
+
+            <label><input type="radio" name="p10" value="3">3</label>
+
+            <label><input type="radio" name="p10" value="4">4</label>
+
+            <label><input type="radio" name="p10" value="5">5</label>
+
+        </div>
+
+    </div>
+
+</div>
+<div class="section-box">
+
+    <h4>
+
+        SECCIÓN IV. SENSIBILIDAD ECONÓMICA DEL CONSUMIDOR
+
+    </h4>
+
+    <!-- Pregunta 11 -->
+
+    <div class="form-group">
+
+        <label>
+
+            <strong>
+
+                11. ¿Estaría dispuesto(a) a pagar una tarifa superior por contratar una agencia de turismo de aventura que demuestre prácticas sostenibles y responsabilidad ambiental?
+
+            </strong>
+
+        </label>
+
+        <div class="radio-group">
+
+            <label>
+
+                <input
+                    type="radio"
+                    name="p11"
+                    value="Sí"
+                    required>
+
+                Sí
+
+            </label>
+
+            <label>
+
+                <input
+                    type="radio"
+                    name="p11"
+                    value="No">
+
+                No
+
+            </label>
+
+        </div>
+
+    </div>
+
+
+    <!-- Pregunta 12 -->
+
+    <div class="form-group">
+
+        <label>
+
+            <strong>
+
+                12. En caso de responder "Sí", ¿qué porcentaje adicional estaría dispuesto(a) a pagar?
+
+            </strong>
+
+        </label>
+
+        <div class="radio-group-vertical">
+
+            <label>
+
+                <input
+                    type="radio"
+                    name="p12"
+                    value="Hasta un 10% extra."
+                    required>
+
+                Hasta un 10% extra.
+
+            </label>
+
+            <label>
+
+                <input
+                    type="radio"
+                    name="p12"
+                    value="Entre un 11% y un 20% extra.">
+
+                Entre un 11% y un 20% extra.
+
+            </label>
+
+            <label>
+
+                <input
+                    type="radio"
+                    name="p12"
+                    value="Más de un 20% extra.">
+
+                Más de un 20% extra.
+
+            </label>
+
+            <label>
+
+                <input
+                    type="radio"
+                    name="p12"
+                    value="No aplica (respondí 'No' en la pregunta anterior).">
+
+                No aplica (respondí "No" en la pregunta anterior).
+
+            </label>
+
+        </div>
+
+    </div>
+
+
+    <!-- Pregunta 13 -->
+
+    <div class="form-group">
+
+        <label>
+
+            <strong>
+
+                13. Si tuviera una experiencia satisfactoria con una agencia de turismo de aventura sostenible, ¿la recomendaría de manera proactiva en medios digitales?
+
+            </strong>
+
+        </label>
+
+        <div class="radio-group-vertical">
+
+            <label>
+
+                <input
+                    type="radio"
+                    name="p13"
+                    value="Definitivamente sí."
+                    required>
+
+                Definitivamente sí.
+
+            </label>
+
+            <label>
+
+                <input
+                    type="radio"
+                    name="p13"
+                    value="Probablemente sí.">
+
+                Probablemente sí.
+
+            </label>
+
+            <label>
+
+                <input
+                    type="radio"
+                    name="p13"
+                    value="Probablemente no.">
+
+                Probablemente no.
+
+            </label>
+
+            <label>
+
+                <input
+                    type="radio"
+                    name="p13"
+                    value="Definitivamente no.">
+
+                Definitivamente no.
+
+            </label>
+
+        </div>
+
+    </div>
+
+
+    <button
+        type="submit"
+        class="btn-submit">
+
+        Guardar Encuesta en la Base de Datos
+
+    </button>
+
+</div>
+
+</form>
+
+</section>
+<section class="charts-section">
+
+<h2 class="titulo-dashboard">
+
+    DASHBOARD ESTADÍSTICO EN TIEMPO REAL
+
+</h2>
+
+
+
+<section class="charts-section">
+
+<h2 class="titulo-dashboard">
+
+    DASHBOARD ESTADÍSTICO EN TIEMPO REAL
+
+</h2>
+
+
+
+<!-- AQUÍ PEGAREMOS EL NUEVO DASHBOARD COMPLETO -->
+<!-- =========================================================
+     TABLA 1 Y FIGURA 1
+     PREGUNTA 1
+========================================================= -->
+
+<div class="report-block">
+
+    <h4 class="oficial-title">
+
+        Tabla 1 y Figura 1.
+
+        <br>
+
+        Pregunta 1.
+        ¿El motivo principal de su visita a Huaraz incluye realizar actividades de turismo de aventura?
+
+    </h4>
+
+    <table class="data-table">
+
+        <thead>
+
+            <tr>
+
+                <th>Respuesta</th>
+
+                <th>Frecuencia</th>
+
+                <th>Porcentaje (%)</th>
+
+            </tr>
+
+        </thead>
+
+        <tbody id="tP1"></tbody>
+
+    </table>
+
+    <div class="canvas-wrap-circular">
+
+        <canvas id="f1"></canvas>
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================================================
+     TABLA 2 Y FIGURA 2
+     PREGUNTA 2
+========================================================= -->
+
+<div class="report-block">
+
+    <h4 class="oficial-title">
+
+        Tabla 2 y Figura 2.
+
+        <br>
+
+        Pregunta 2.
+        ¿Cuál es su edad?
+
+    </h4>
+
+    <table class="data-table">
+
+        <thead>
+
+            <tr>
+
+                <th>Rango de edad</th>
+
+                <th>Frecuencia</th>
+
+                <th>Porcentaje (%)</th>
+
+            </tr>
+
+        </thead>
+
+        <tbody id="tEdad"></tbody>
+
+    </table>
+
+    <div class="canvas-wrap-linear">
+
+        <canvas id="f2"></canvas>
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================================================
+     TABLA 3 Y FIGURA 3
+     PREGUNTA 3
+========================================================= -->
+
+<div class="report-block">
+
+    <h4 class="oficial-title">
+
+        Tabla 3 y Figura 3.
+
+        <br>
+
+        Pregunta 3.
+        ¿Cuál es su género?
+
+    </h4>
+
+    <table class="data-table">
+
+        <thead>
+
+            <tr>
+
+                <th>Género</th>
+
+                <th>Frecuencia</th>
+
+                <th>Porcentaje (%)</th>
+
+            </tr>
+
+        </thead>
+
+        <tbody id="tGenero"></tbody>
+
+    </table>
+
+    <div class="canvas-wrap-circular">
+
+        <canvas id="f3"></canvas>
+
+    </div>
+
+</div>
+<!-- =========================================================
+     TABLA 4 Y FIGURA 4
+     PREGUNTA 4
+========================================================= -->
+
+<div class="report-block">
+
+    <h4 class="oficial-title">
+
+        Tabla 4 y Figura 4.
+
+        <br>
+
+        Pregunta 4.
+        ¿Cuál es su nacionalidad?
+
+    </h4>
+
+    <table class="data-table">
+
+        <thead>
+
+            <tr>
+
+                <th>Procedencia</th>
+
+                <th>Frecuencia</th>
+
+                <th>Porcentaje (%)</th>
+
+            </tr>
+
+        </thead>
+
+        <tbody id="tProcedencia"></tbody>
+
+    </table>
+
+    <div class="canvas-wrap-circular">
+
+        <canvas id="f4"></canvas>
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================================================
+     TABLA 5 Y FIGURA 5
+     PREGUNTA 5
+========================================================= -->
+
+<div class="report-block">
+
+    <h4 class="oficial-title">
+
+        Tabla 5 y Figura 5.
+
+        <br>
+
+        Pregunta 5.
+        ¿Qué factor considera MÁS importante al elegir una agencia de turismo de aventura?
+
+    </h4>
+
+    <table class="data-table">
+
+        <thead>
+
+            <tr>
+
+                <th>Factor de elección</th>
+
+                <th>Frecuencia</th>
+
+                <th>Porcentaje (%)</th>
+
+            </tr>
+
+        </thead>
+
+        <tbody id="tFactor"></tbody>
+
+    </table>
+
+    <div class="canvas-wrap-linear">
+
+        <canvas id="f5"></canvas>
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================================================
+     TABLA 6 Y FIGURA 6
+     PREGUNTA 6
+========================================================= -->
+
+<div class="report-block">
+
+    <h4 class="oficial-title">
+
+        Tabla 6 y Figura 6.
+
+        <br>
+
+        Pregunta 6.
+        ¿A través de qué medio suele informarse sobre la reputación ambiental de una agencia de turismo de aventura?
+
+    </h4>
+
+    <table class="data-table">
+
+        <thead>
+
+            <tr>
+
+                <th>Medio de información</th>
+
+                <th>Frecuencia</th>
+
+                <th>Porcentaje (%)</th>
+
+            </tr>
+
+        </thead>
+
+        <tbody id="tMedios"></tbody>
+
+    </table>
+
+    <div class="canvas-wrap-linear">
+
+        <canvas id="f6"></canvas>
+
+    </div>
+
+</div>
+<!-- =========================================================
+     TABLA 7
+     PREGUNTAS 7, 8, 9 Y 10
+========================================================= -->
+
+<div class="report-block">
+
+    <h4 class="oficial-title">
+
+        Tabla 7.
+
+        <br>
+
+        Preguntas 7, 8, 9 y 10.
+
+        Matriz de Concepción Ambiental (Escala de Likert)
+
+    </h4>
+
+    <table class="data-table">
+
+        <thead>
+
+            <tr>
+
+                <th>Pregunta</th>
+
+                <th>1</th>
+
+                <th>2</th>
+
+                <th>3</th>
+
+                <th>4</th>
+
+                <th>5</th>
+
+            </tr>
+
+        </thead>
+
+        <tbody id="tLikert">
+
+        </tbody>
+
+    </table>
+
+</div>
+
+
+
+<!-- =========================================================
+     TABLA 8 Y FIGURA 8
+     PREGUNTA 11
+========================================================= -->
+
+<div class="report-block">
+
+    <h4 class="oficial-title">
+
+        Tabla 8 y Figura 8.
+
+        <br>
+
+        Pregunta 11.
+
+        ¿Estaría dispuesto(a) a pagar una tarifa superior por contratar una agencia de turismo de aventura que demuestre prácticas sostenibles y responsabilidad ambiental?
+
+    </h4>
+
+    <table class="data-table">
+
+        <thead>
+
+            <tr>
+
+                <th>Respuesta</th>
+
+                <th>Frecuencia</th>
+
+                <th>Porcentaje (%)</th>
+
+            </tr>
+
+        </thead>
+
+        <tbody id="tPremium">
+
+        </tbody>
+
+    </table>
+
+    <div class="canvas-wrap-circular">
+
+        <canvas id="f8"></canvas>
+
+    </div>
+
+</div>
+<!-- =========================================================
+     TABLA 9 Y FIGURA 9
+     PREGUNTA 12
+========================================================= -->
+
+<div class="report-block">
+
+    <h4 class="oficial-title">
+
+        Tabla 9 y Figura 9.
+
+        <br>
+
+        Pregunta 12.
+
+        En caso de responder "Sí", ¿qué porcentaje adicional estaría dispuesto(a) a pagar?
+
+    </h4>
+
+    <table class="data-table">
+
+        <thead>
+
+            <tr>
+
+                <th>Monto adicional</th>
+
+                <th>Frecuencia</th>
+
+                <th>Porcentaje (%)</th>
+
+            </tr>
+
+        </thead>
+
+        <tbody id="tMontoExtra">
+
+        </tbody>
+
+    </table>
+
+    <div class="canvas-wrap-linear">
+
+        <canvas id="f9"></canvas>
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================================================
+     TABLA 10 Y FIGURA 10
+     PREGUNTA 13
+========================================================= -->
+
+<div class="report-block">
+
+    <h4 class="oficial-title">
+
+        Tabla 10 y Figura 10.
+
+        <br>
+
+        Pregunta 13.
+
+        Si tuviera una experiencia satisfactoria con una agencia de turismo de aventura sostenible,
+        ¿la recomendaría de manera proactiva en medios digitales?
+
+    </h4>
+
+    <table class="data-table">
+
+        <thead>
+
+            <tr>
+
+                <th>Respuesta</th>
+
+                <th>Frecuencia</th>
+
+                <th>Porcentaje (%)</th>
+
+            </tr>
+
+        </thead>
+
+        <tbody id="tRecomendar">
+
+        </tbody>
+
+    </table>
+
+    <div class="canvas-wrap-circular">
+
+        <canvas id="f10"></canvas>
+
+    </div>
+
+</div>
+<!-- =========================================================
+     TABLA 11 Y FIGURA 11
+     CRUCE PREGUNTA 5 vs PREGUNTA 4
+========================================================= -->
+
+<div class="report-block">
+
+    <h4 class="oficial-title">
+
+        Tabla 11 y Figura 11.
+
+        <br>
+
+        Cruce entre la Pregunta 5
+        (¿Qué factor considera MÁS importante al elegir una agencia?)
+
+        y la Pregunta 4
+        (Nacionalidad)
+
+    </h4>
+
+    <table class="data-table">
+
+        <thead>
+
+            <tr>
+
+                <th>Factor de elección</th>
+
+                <th>Nacionales</th>
+
+                <th>Extranjeros</th>
+
+                <th>Total</th>
+
+            </tr>
+
+        </thead>
+
+        <tbody id="tCruceFactores">
+
+        </tbody>
+
+    </table>
+
+    <div class="canvas-wrap-linear">
+
+        <canvas id="f11"></canvas>
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================================================
+     TABLA 12 Y FIGURA 12
+     CRUCE PREGUNTA 11 vs PREGUNTA 4
+========================================================= -->
+
+<div class="report-block">
+
+    <h4 class="oficial-title">
+
+        Tabla 12 y Figura 12.
+
+        <br>
+
+        Cruce entre la Pregunta 11
+        (Disposición a pagar una tarifa premium)
+
+        y la Pregunta 4
+        (Nacionalidad)
+
+    </h4>
+
+    <table class="data-table">
+
+        <thead>
+
+            <tr>
+
+                <th>Respuesta</th>
+
+                <th>Nacionales</th>
+
+                <th>Extranjeros</th>
+
+                <th>Total</th>
+
+            </tr>
+
+        </thead>
+
+        <tbody id="tCrucePremium">
+
+        </tbody>
+
+    </table>
+
+    <div class="canvas-wrap-linear">
+
+        <canvas id="f12"></canvas>
+
+    </div>
+
+</div>
+
+
+</section>
+
+</div>
+
+<script src="app.js"></script>
+
+</body>
+</html>
+
+</body>
+
+</html>
